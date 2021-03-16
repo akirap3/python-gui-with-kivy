@@ -1,0 +1,29 @@
+<MyLayout>
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		# box 與上一層容器的邊界距離
+		padding: 50
+
+		# box 之間的距離
+		spacing: 20
+
+		Button:
+			text: "Hello World!"
+
+		Button:
+			text: "Goodbye World!"
+
+		Button:
+			text: "I'am hungry"
+			# 從左方算過來的比例
+			pos_hint: {'center_x': 0.5}
+			# 此 button 的 size 調整
+			size_hint: (0.5, 0.5)
+
+			# 如果要直接寫長寬的話
+			# width: 200
+			# height: 150
+
+

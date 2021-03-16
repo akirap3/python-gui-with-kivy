@@ -1,0 +1,44 @@
+# 如果要使用色碼的表達方式，則要 import utils kivy.utils
+#: import utils kivy.utils
+<MyGridLayout>
+
+	name:name
+	pizza:pizza
+	color:color
+
+	GridLayout:
+		cols:1
+		size: root.width, root.height
+		GridLayout:
+			cols:2
+
+			Label:
+				text: 'Name'
+			TextInput:
+				id: name
+				multiline: False
+
+			Label:
+				text: 'Favorite Pizza'
+			TextInput:
+				id: pizza
+				multiline: False
+
+			Label:
+				text: 'Favotite Color'
+			TextInput:
+				id: color
+				multiline: False
+
+		Button:
+			text: "Submit"
+			font_size:32
+			on_press: root.press()
+
+			# 使顏色呈現方式正常，不然kivy 會將顏色都混成該色較深的顏色
+			background_normal: ''
+
+			# 如果我們使用 rgb(72,189,185)，由於kivy 的數值只有 0 ~ 1, 所以要除以 255.0 確保浮點數
+			#background_color: (72/255.0,189/255.0, 185/255.0, 1)
+
+			background_color: utils.get_color_from_hex('#1bdbdb')
