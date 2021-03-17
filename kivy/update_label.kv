@@ -1,31 +1,22 @@
-<Button>
-	font_size: 32
-	size_hint: (0.3, 0.3)
-
 <MyLayout>
 
-	FloatLayout:
+	BoxLayout:
+		orientation: "vertical"
 		size: root.width, root.height
 
+		Label: 
+			id: name_label
+			text: "What's your name?"
+			font_size: 32
+
+		TextInput:
+			id: name_input
+			multiline: False
+			size_hint: (1, .5)
 
 		Button:
-			text: "Top Left"
-			# {"x", "y", "top", "bottom", "left", "right"}
-			pos_hint: {"x":0, "top":1}
+			size_hint: (1, .5)
+			font_size: 32
+			text: "Submit"
+			on_press: root.press()
 
-		Button:
-			text: "Top Right"
-			pos_hint: {"x":0.7, "top":1}
-
-		Button:
-			text: "Center"
-			# pos_hint: {"x": 0.35, "top": 0.65}
-			pos_hint: {"x": 0.35, "y": 0.35}
-
-		Button:
-			text: "Bottom Left"
-			pos_hint: {"x":0}
-
-		Button:
-			text: "Bottom Right"
-			pos_hint: {"x":0.7, "bottom":1}
