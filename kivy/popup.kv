@@ -1,0 +1,39 @@
+#: import Factory kivy.factory.Factory
+
+<MyPopup@Popup>
+	# 是否可以直接點任何地方 popup 會消失
+	auto_dimiss: False
+
+	size_hint: 0.6, 0.2
+	pos_hint: {"x": 0.2, "top": 0.6}
+
+	title: "This is a popup box"
+
+	# Popup 裡面只能放一個 widget，如果要放好幾個 widget，則可以將他們包在 BoxLayout 中
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		Label:
+			text: "Somthing in our popup box"
+			font_sizw: 24
+
+		Button:
+			text: "Close Me!"
+			font_size: 24
+			on_release: root.dismiss()
+
+
+<MyLayout>
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		Label:
+			text: "Popup Stuff"
+			font_size: 32
+
+		Button:
+			text: "Popup"
+			font_size: 32
+			on_release: Factory.MyPopup().open()

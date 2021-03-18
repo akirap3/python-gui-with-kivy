@@ -1,0 +1,20 @@
+<MyLayout>
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		Carousel:
+			direction: "right"
+
+			Image:
+				source: "./image/dog.jpg"
+			# 也可以使用 url 來取得圖片
+			AsyncImage:
+				source: 'https://www.vets4pets.com/siteassets/species/dog/large-dog-on-walk-looking-over-hills.jpg?w=585&scale=down'
+
+			Image:
+				source: "./image/dog2.jpg"
+
+			Image:
+				source: "./image/dog3.jpg"
